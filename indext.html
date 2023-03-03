@@ -5,66 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        .main{
-            background: #000;
-            color: white;
-            height: 100vh;
-            width: 100%;
-            display: grid;
-            place-items: center;
-            padding: 20px;
-        }
-        .claculate{
-            height: 50vh;
-            background:wheat;
-            width: 15vw;
-            padding: 30px;
-            border-radius: 10px;
-            
-            
-           
-        }
-        .input input{
-            width: 100%;
-            border: none;
-            border-radius: 10px;
-            outline: none;
-            height: 30px;
-        }
-        .numbers{
-            margin-top:12px;
-         
-        }
-        .num-btn{
-            width: 50px;
-            height: 50px;
-        }
-        .clear{
-            width: 50px;
-            height: 50px;
-        }
-        .back ,.equl{
-            width: 50px;
-            height: 50px;
-        }
-    </style>
+    <!--Css linked here-->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- main section start-->
     <div class="main">
         <div class="claculate">
+             <!--input section-->
             <div class="input">
                 <input type="text" class="text" value="" readonly>
             
             </div>
+            <!--input section end-->
+            <!--button section start-->
             <div class="numbers">
                 <button  type="button" class="clear">clear</button>
                 <button  type="button" class="back">back</button>
                 <button  type="button" class="num-btn">0</button>
-
-
-               
-            </div>
+              </div>
             
             <div class="numbers">
                 <button  type="button" class="num-btn">7</button>
@@ -90,39 +49,12 @@
                 <button  type="button" class="percentage ">%</button>
                 <button  type="button" class="equl">=</button>
             </div>
-            
-
-        </div>
+            <!-- button section end-->
+            </div>
     </div>
+    <!-- main section end-->
+    <!--jquery linked here--->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <script>
-        $(document).ready (function(){
-            $(".num-btn").on("click", function(){
-                $(".text").val($(".text").val() + $(this).html())
-            })
-            $(".equl").on("click", function(){
-              ex= $(".text").val();
-              if(ex.includes('x')){
-                ex= ex.replace('x','*');
-              }
-              $('.text').val(eval(ex));
-            })
-            $(".clear").on("click", function(){
-                $(".text").val("0");
-            })
-            $(".back").on("click",function(){
-               xr=$(".text").val();
-                $(".text").val(xr.substring(0,xr.length - 1))
-            }) 
-            $("percentage").on("click" ,function(){
-                s=$(".text").val();
-               if(s / 100){
-             console.log(s);
-               }
-            })
-
-
-        })
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
